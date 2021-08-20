@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Vizpower_Plugin_Installer__WPF_.LoadingWait"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  Background="#19A39E9E" Name="loadingWait">
+    <!--设置圆的颜色-->
+    <UserControl.Resources>
+        <SolidColorBrush Color="CornflowerBlue" x:Key="CirclesColor"/>
+    </UserControl.Resources>
+ 
+    <Grid>
+        <StackPanel   HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Viewbox Width="100" Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+                <Grid x:Name="LayoutRoot" 
+                Background="Transparent"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                    <!--此处有canvas的加载和卸载事件-->
+                    <Canvas RenderTransformOrigin="0.5,0.5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Width="120"
+                    Height="120" Loaded="HandleLoaded"
+                    Unloaded="HandleUnloaded"  >
+                        <!--画圆,设置成不同的透明度Opacity-->
+                        <Ellipse x:Name="C0" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="1.0"/>
+                        <Ellipse x:Name="C1" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.9"/>
+                        <Ellipse x:Name="C2" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.8"/>
+                        <Ellipse x:Name="C3" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.7"/>
+                        <Ellipse x:Name="C4" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.6"/>
+                        <Ellipse x:Name="C5" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.5"/>
+                        <Ellipse x:Name="C6" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.4"/>
+                        <Ellipse x:Name="C7" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.3"/>
+                        <Ellipse x:Name="C8" Width="20" Height="20"
+                         Canvas.Left="0"
+                         Canvas.Top="0" Stretch="Fill"
+                         Fill="{StaticResource CirclesColor}" Opacity="0.2"/>
+                        <Canvas.RenderTransform>
+                            <RotateTransform x:Name="SpinnerRotate"
+                         Angle="0" />
+                        </Canvas.RenderTransform>
+                    </Canvas>
+                </Grid>
+            </Viewbox>
+            <!--这两个针对的元素名称是loadingWait，所以必须要给本界面一个名称-->
+            <!--TextBlock里面放置提示信息；Label放置相当于按钮的东西-->
+            <TextBlock Text="{Binding TipContent,ElementName=loadingWait}" FontStretch="Medium" HorizontalAlignment="Center" FontSize="16"></TextBlock>
+            <Label Content="{Binding InnerContent,ElementName=loadingWait}" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

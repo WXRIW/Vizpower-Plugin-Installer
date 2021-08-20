@@ -1,0 +1,28 @@
+﻿<Window x:Class="Vizpower_Plugin_Installer__WPF_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vizpower_Plugin_Installer__WPF_" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Loaded="Window_Loaded" FontFamily="Segoe UI, Microsoft YaHei UI" FontSize="14"
+        Title="无限宝第三方插件安装程序" Height="245" Width="450" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label1" Content="为了阻挡无限宝的打击，本程序诞生了！" VerticalAlignment="Top" Margin="10,5,10.2,0" Height="30" Foreground="Red"/>
+        <TextBox x:Name="TextBoxLocation" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="339" Margin="10,108,0,0" VerticalContentAlignment="Center"/>
+        <Label x:Name="label2" Content="本程序释放的文件会引起部分杀毒软件的误报，如果出现，请更换&#xD;&#xA;杀毒软件（建议使用火绒）" VerticalAlignment="Top" Margin="10,31,10.2,0" Height="46" Foreground="Red"/>
+        <Label x:Name="labelLocation" Content="无限宝 iMeeting.exe 位置：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0"/>
+        <Button x:Name="ButtonNavigate" Content="浏览" Click="ButtonNavigate_Click" Margin="356,108,10,0" Height="33" VerticalAlignment="Top"/>
+        <Label x:Name="labelManual" Cursor="Hand" MouseDown="labelManual_MouseDown" Content="使用说明（点我！点我！）" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,142,0,0" Foreground="Blue"/>
+        <Label x:Name="labelDeclear" Cursor="Hand" MouseDown="labelDeclear_MouseDown"  Content="用户协议和免责声明" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,142,0,0" Foreground="Blue"/>
+        <CheckBox x:Name="CheckBoxAgreement" Content="已阅读并同意" Checked="CheckBoxAgreement_Checked" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="201,142,0,0" Height="29" Width="107" VerticalContentAlignment="Center"/>
+        <Label x:Name="label" Cursor="Hand" MouseDown="label_MouseDown" Content="点击观看视频教程" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304,51,0,0" Foreground="Blue"/>
+        <Button x:Name="ButtonUnistall" Content="卸载" Click="ButtonUnistall_Click" Margin="0,173,10,0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="207"/>
+        <Button x:Name="ButtonInstall" Content="安装" MouseMove="ButtonInstall_MouseMove" Click="ButtonInstall_Click" Margin="10,173,0,0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="207"/>
+
+        <local:LoadingWait Visibility="Visible" Background="White" TipContent="" x:Name="loadingWait" Margin="0,0,0.2,0.2"/>
+        <Label x:Name="labelUpdate" Content="正在检查更新" VerticalAlignment="Center" Height="56" Margin="169,162,169.2,-2.8" HorizontalAlignment="Center" FontSize="16"/>
+    </Grid>
+</Window>
